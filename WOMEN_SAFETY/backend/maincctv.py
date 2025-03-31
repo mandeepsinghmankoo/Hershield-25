@@ -20,8 +20,8 @@ model = YOLO("yolov8n.pt")
 
 # Load Gender Classification Model
 gender_net = cv2.dnn.readNet(
-    r"C:\Users\Admin\OneDrive\Documents\WOMEN SAFETY SOFTWARE\gender_net.caffemodel",
-    r"C:\Users\Admin\OneDrive\Documents\WOMEN SAFETY SOFTWARE\gender_deploy.prototxt"
+    r"C:\Users\Admin\OneDrive\Documents\PlakshUniMohali\Hershield-25\WOMEN_SAFETY\backend\gender_net (4).caffemodel",
+    r"C:\Users\Admin\OneDrive\Documents\PlakshUniMohali\Hershield-25\WOMEN_SAFETY\backend\gender_deploy (4).prototxt"
 )
 gender_list = ['Male', 'Female']
 
@@ -35,7 +35,7 @@ incident_report_file = "incident_reports.csv"
 
 # Function to Play Alert Sound
 def play_alert_sound():
-    playsound(r"C:\Users\Admin\OneDrive\Documents\WOMEN SAFETY SOFTWARE\700-hz-beeps-86815 (1).mp3")
+    playsound(r"C:\Users\Admin\OneDrive\Documents\PlakshUniMohali\Hershield-25\WOMEN_SAFETY\backend\700-hz-beeps-86815 (2).mp3")
 
 # Function to Check Nighttime
 def is_nighttime():
