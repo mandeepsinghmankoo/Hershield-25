@@ -25,8 +25,8 @@ function Home() {
                         </Link>
                     </div>
                 </div>
-                <div className="right flex justify-center items-center w-1/2 mt-10">
-                    <img className='h-[75vh] w-520' src="homepic.png" alt="" />
+                <div className="right flex justify-center items-center w-100 mt-10">
+                    <img className='h-[75vh] w-220' src="log.png" alt="" />
                 </div>
             </div>
 
