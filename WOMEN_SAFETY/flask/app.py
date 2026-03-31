@@ -1,19 +1,21 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 import subprocess
+import os
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:5174"}})  # Correct syntax
+CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})  # Correct syntax
 
 @app.route('/start-camera', methods=['GET'])
 def start_camera():
     try:
-        # Try with 'python' instead of 'python3'
-        subprocess.run(["python", "safety_detection.py"], check=True)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        subprocess.Popen(["python", "safety_detection.py"], cwd=script_dir)
         return jsonify({"message": "Camera started successfully"})
-    except subprocess.CalledProcessError as e:
-        return jsonify({"error": str(e)}), 500
+    except Exception as e:
+        import traceback
+        return jsonify({"error": str(e), "details": traceback.format_exc()}), 500
 
  
 if __name__ == '__main__':
