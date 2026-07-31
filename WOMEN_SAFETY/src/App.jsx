@@ -14,7 +14,7 @@ function App() {
 
     <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-b ">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* <LiquidEther
+        <LiquidEther
           autoDemo={false}
           autoSpeed={0.2}
           autoIntensity={1.0}
@@ -26,7 +26,7 @@ function App() {
           colors={['#f0bd6a', '#f8d9a6', '#ffffff']}
           style={{ width: '100%', height: '100%' }}
           className="h-full w-full"
-        /> */}
+        />
       </div>
       <Router>
         <Routes>
