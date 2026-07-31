@@ -10,7 +10,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, { email, password });
       alert(response.data.message); // Optional: Show success message
       navigate('/loginUI'); // Navigate to the LoginUI component
     } catch (error) {

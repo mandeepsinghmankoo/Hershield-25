@@ -8,7 +8,7 @@ function SignUp() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/signup', { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/signup`, { email, password });
       alert(response.data.message);
     } catch (error) {
       alert(error.response.data.message || "An error occurred while signing up.");
