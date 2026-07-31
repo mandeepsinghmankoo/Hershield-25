@@ -5,8 +5,9 @@ const Navbar = () => {
   return (
     <nav className=" p-2  mx-auto shadow-2xl ">
       <div className="container mx-auto flex items-center justify-between z-50">
-        <a href="#logo">
-          <img src="/logo2.png" alt="Logo" className="h-14 " />
+        <a href="#logo" className="flex items-center space-x-2 text-white font-bold text-3xl">
+          <img src="/heropic.png" alt="Logo" className="h-14 " />
+          <div>HERShield</div>
         </a>
         <div className="flex space-x-6 shadow-2xl font-semibold">
           <NavLink to="/" className="text-white hover:text-lg">Home</NavLink>

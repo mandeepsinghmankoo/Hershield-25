@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+require("dotenv").config({ path: require('path').join(__dirname, '.env') });
 const bcrypt = require('bcryptjs');
 
 // Initialize Express
@@ -11,9 +12,9 @@ app.use(bodyParser.json());
 
 // MongoDB connection
 mongoose
-  .connect('mongodb://localhost:27017/user_auth')
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('Failed to connect to MongoDB:', err));
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch((err) => console.error('MongoDB connection error:', err.message));
 
 // User schema and model
 const userSchema = new mongoose.Schema({
@@ -75,7 +76,7 @@ app.post('/login', async (req, res) => {
 });
 
 // Start the server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
